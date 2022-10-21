@@ -5,7 +5,7 @@ description: "Private Registry by Helm Broker."
 displayName: "Private Registry"
 tags: harbor
 providerDisplayName: infranics
-longDescription: "https://github.com/SukiKim/harbor.git"
+longDescription: "https://github.com/hyunkim13/harbor.git"
 documentationURL: ""
 supportURL: ""
 imageURL: ""
