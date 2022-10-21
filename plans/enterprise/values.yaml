@@ -1,0 +1,4 @@
+persistence:
+  persistentVolumeClaim:
+    registry:
+       size: 30Gi
