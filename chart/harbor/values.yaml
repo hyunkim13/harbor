@@ -388,7 +388,7 @@ proxy:
 # If expose the service via "ingress", the Nginx will not be used
 nginx:
   image:
-    repository: registry.saas.sysmasterk8s.com/goharbor/nginx-photon
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/nginx-photon
     tag: v2.6.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -409,7 +409,7 @@ nginx:
 
 portal:
   image:
-    repository: registry.saas.sysmasterk8s.com/goharbor/harbor-portal
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-portal
     tag: v2.6.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -430,7 +430,7 @@ portal:
 
 core:
   image:
-    repository: registry.saas.sysmasterk8s.com/goharbor/harbor-core
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-core
     tag: v2.6.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -468,7 +468,7 @@ core:
 
 jobservice:
   image:
-    repository: registry.saas.sysmasterk8s.com/goharbor/harbor-jobservice
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-jobservice
     tag: v2.6.0
   replicas: 1
   # set the service account to be used, default if left empty
@@ -505,7 +505,7 @@ registry:
   automountServiceAccountToken: false
   registry:
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/registry-photon
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/registry-photon
       tag: v2.6.0
     # resources:
     #  requests:
@@ -513,7 +513,7 @@ registry:
     #    cpu: 100m
   controller:
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/harbor-registryctl
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-registryctl
       tag: v2.6.0
 
     # resources:
@@ -561,7 +561,7 @@ chartmuseum:
   # Harbor defaults ChartMuseum to returning relative urls, if you want using absolute url you should enable it by change the following value to 'true'
   absoluteUrl: false
   image:
-    repository: registry.saas.sysmasterk8s.com/goharbor/chartmuseum-photon
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/chartmuseum-photon
     tag: v2.6.0
   replicas: 1
   # resources:
@@ -583,7 +583,7 @@ trivy:
   enabled: true
   image:
     # repository the repository for Trivy adapter image
-    repository: registry.saas.sysmasterk8s.com/goharbor/trivy-adapter-photon
+    repository: registry.saas.sysmasterk8s.com:443/goharbor/trivy-adapter-photon
     # tag the tag for Trivy adapter image
     tag: v2.6.0
   # set the service account to be used, default if left empty
@@ -649,7 +649,7 @@ notary:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/notary-server-photon
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/notary-server-photon
       tag: v2.6.0
     replicas: 1
     # resources:
@@ -669,7 +669,7 @@ notary:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/notary-signer-photon
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/notary-signer-photon
       tag: v2.6.0
     replicas: 1
     # resources:
@@ -701,7 +701,7 @@ database:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/harbor-db
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-db
       tag: v2.6.0
     # The initial superuser password for internal database
     password: "changeit"
@@ -765,7 +765,7 @@ redis:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/redis-photon
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/redis-photon
       tag: v2.6.0
     # resources:
     #  requests:
@@ -805,7 +805,7 @@ exporter:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: registry.saas.sysmasterk8s.com/goharbor/harbor-exporter
+      repository: registry.saas.sysmasterk8s.com:443/goharbor/harbor-exporter
       tag: v2.6.0
     nodeSelector: {}
     tolerations: []
