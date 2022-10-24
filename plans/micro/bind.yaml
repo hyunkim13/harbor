@@ -5,7 +5,7 @@ credential:
   - name: NODE_PORT
     valueFrom:
       serviceRef:
-        name: {{ include "harbor.fullname" . }}
+        name: {{ include "harbor.fullname" . }}-harbor
         jsonpath: '{ .spec.ports[?(@.name=="http")].nodePort }'
 {{- end }}
   - name: userName
