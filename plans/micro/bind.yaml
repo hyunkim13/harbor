@@ -2,21 +2,11 @@ credential:
   - name: HOST
     value: {{ include "harbor.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
 {{- if (eq .Values.service.type "NodePort") }}
-  - name: WEB_NODE_PORT
+  - name: NODE_PORT
     valueFrom:
       serviceRef:
         name: {{ include "harbor.fullname" . }}
-        jsonpath: '{ .spec.ports[?(@.name=="web2")].nodePort }'
-  - name: COLLECTOR_NODE_PORT
-    valueFrom:
-      serviceRef:
-        name: {{ include "harbor.fullname" . }}
-        jsonpath: '{ .spec.ports[?(@.name=="http2")].nodePort }'
-  - name: UDP_NODE_PORT
-    valueFrom:
-      serviceRef:
-        name: {{ include "harbor.fullname" . }}
-        jsonpath: '{ .spec.ports[?(@.name=="udp2")].nodePort }'
+        jsonpath: '{ .spec.ports[?(@.name=="http")].nodePort }'
 {{- end }}
   - name: CLUSTER_IP
     valueFrom:
