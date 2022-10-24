@@ -13,5 +13,5 @@ credential:
   - name: userPassWord
     valueFrom:
       secretiKeyRef:
-        name: {{ template "mariadb.secretName" . }}-core
+        name: {{ template "harbor.secretName" . }}-core
         key: HARBOR_ADMIN_PASSWORD
