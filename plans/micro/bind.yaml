@@ -1,15 +1,17 @@
 credential:
   - name: HOST
     value: {{ include "harbor.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
-{{- if (eq .Values.service.type "NodePort") }}
+{{- if (eq .Values.expose.type "nodePort") }}
   - name: NODE_PORT
     valueFrom:
       serviceRef:
         name: {{ include "harbor.fullname" . }}
         jsonpath: '{ .spec.ports[?(@.name=="http")].nodePort }'
 {{- end }}
-  - name: CLUSTER_IP
+  - name: userName
+    value: admin
+  - name: userPassWord
     valueFrom:
-      serviceRef:
-        name: {{ include "harbor.fullname" . }}
-        jsonpath: '{ .spec.clusterIP }'
+      secretiKeyRef:
+        name: {{ template "mariadb.secretName" . }}-core
+        key: HARBOR_ADMIN_PASSWORD
