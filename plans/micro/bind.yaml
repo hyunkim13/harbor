@@ -13,5 +13,5 @@ credential:
   - name: userPassWord
     valueFrom:
       secretiKeyRef:
-        name: {{ template "harbor.secretName" . }}-core
+        name: {{ template "harbor.fullname" . }}-core
         key: HARBOR_ADMIN_PASSWORD
