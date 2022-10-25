@@ -48,7 +48,7 @@ spec:
       automountServiceAccountToken: {{ .Values.chartmuseum.automountServiceAccountToken | default false }}
       containers:
       - name: chartmuseum
-        image: {{ .Values.chartmuseum.image.repository }}:{{ .Values.chartmuseum.image.tag }}
+        image: {{ .Values.global.registry }}/{{ .Values.chartmuseum.image.repository }}:{{ .Values.chartmuseum.image.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         livenessProbe:
           httpGet:

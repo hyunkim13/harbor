@@ -37,7 +37,7 @@ spec:
       automountServiceAccountToken: {{ .Values.notary.server.automountServiceAccountToken | default false }}
       containers:
       - name: notary-server
-        image: {{ .Values.notary.server.image.repository }}:{{ .Values.notary.server.image.tag }}
+        image: {{ .Values.global.registry }}/{{ .Values.notary.server.image.repository }}:{{ .Values.notary.server.image.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         livenessProbe:
           httpGet:

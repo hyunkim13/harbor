@@ -35,7 +35,7 @@ spec:
       automountServiceAccountToken: {{ .Values.exporter.automountServiceAccountToken | default false }}
       containers:
       - name: exporter
-        image: {{ .Values.exporter.image.repository }}:{{ .Values.exporter.image.tag }}
+        image: {{ .Values.global.registry }}/{{ .Values.exporter.image.repository }}:{{ .Values.exporter.image.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         livenessProbe:
           httpGet:
