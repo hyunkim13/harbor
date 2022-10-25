@@ -1,6 +1,9 @@
 credential:
-  - name: HOST
-    value: {{ include "harbor.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  - name: CLUSTER_IP
+    valueFrom:
+      serviceRef:
+        name: {{ include "harbor.fullname" . }}
+        jsonpath: '{ .spec.clusterIP }' 
 {{- if (eq .Values.expose.type "nodePort") }}
   - name: NODE_PORT
     valueFrom:

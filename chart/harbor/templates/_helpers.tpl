@@ -31,6 +31,9 @@ heritage: {{ .Release.Service }}
 release: {{ .Release.Name }}
 chart: {{ .Chart.Name }}
 app: "{{ template "harbor.name" . }}"
+platform: demand_service
+taskse: demand_devops
+taskcl: demand_img_store
 {{- end -}}
 
 {{/* matchLabels */}}
