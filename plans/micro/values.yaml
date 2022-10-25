@@ -71,22 +71,25 @@ trivy:
 
 notary:
   server:
-    requests:
-      cpu: 0.01
-      memory: 20Mi
-    limits:
-      cpu: 0.02
-      memory: 40Mi
+    resources:
+      requests:
+        cpu: 0.01
+        memory: 20Mi
+      limits:
+        cpu: 0.02
+        memory: 40Mi
   signer:
-    requests:
-      cpu: 0.01
-      memory: 20Mi
-    limits:
-      cpu: 0.02
-      memory: 40Mi
+    resources:
+      requests:
+        cpu: 0.01
+        memory: 20Mi
+      limits:
+        cpu: 0.02
+        memory: 40Mi
 
 database:
-  requests:
+  resources:
+    requests:
       cpu: 0.02
       memory: 400Mi
     limits:
@@ -94,7 +97,8 @@ database:
       memory: 800Mi
 
 redis:
-  requests:
+  resources:
+    requests:
       cpu: 0.01
       memory: 15Mi
     limits:
