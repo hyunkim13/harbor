@@ -2,7 +2,7 @@ credential:
   - name: CLUSTER_IP
     valueFrom:
       serviceRef:
-        name: {{ include "harbor.fullname" . }}
+        name: {{ include "harbor.fullname" . }}-harbor
         jsonpath: '{ .spec.clusterIP }' 
 {{- if (eq .Values.expose.type "nodePort") }}
   - name: NODE_PORT
