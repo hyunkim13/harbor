@@ -62,7 +62,7 @@ chartmuseum:
 trivy:
   resources:
     requests:
-      cpu: 200
+      cpu: 0.2
       memory: 512Mi
     limits:
       cpu: 1
@@ -87,14 +87,14 @@ notary:
         cpu: 0.02
         memory: 40Mi
 
-database:
-  resources:
-    requests:
-      cpu: 0.02
-      memory: 400Mi
-    limits:
-      cpu: 0.04
-      memory: 800Mi
+        #database:
+        #  resources:
+        #    requests:
+        #      cpu: 0.02
+        #      memory: 400Mi
+        #    limits:
+        #      cpu: 0.04
+        #      memory: 800Mi
 
 redis:
   resources:

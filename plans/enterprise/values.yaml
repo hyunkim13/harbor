@@ -87,15 +87,15 @@ notary:
         cpu: 0.04
         memory: 80Mi
 
-database:
-  resources:
-    requests:
-        cpu: 0.02
-        memory: 400Mi
-      limits:
-        cpu: 0.08
-        memory: 1600Mi
-
+        #database:
+        #  resources:
+        #    requests:
+        #      cpu: 0.02
+        #      memory: 400Mi
+        #    limits:
+        #      cpu: 0.08
+        #      memory: 1600Mi
+        
 redis:
   resources:
     requests:
