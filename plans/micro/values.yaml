@@ -1,4 +1,102 @@
 persistence:
   persistentVolumeClaim:
     registry:
-       size: 10Gi
+      size: 10Gi
+    database:
+      size: 5Gi
+nginx:
+  resources:
+    requests:
+      cpu: 0.005
+      memory: 20Mi
+    limits:
+      cpu: 0.01
+      memory: 40Mi
+
+portal:
+  resources:
+    requests:
+      cpu: 0.001
+      memory: 35Mi
+    limits:
+      cpu: 0.002
+      memory: 70Mi
+
+core:
+  resources:
+    requests:
+      cpu: 0.03
+      memory: 100Mi
+    limits:
+      cpu: 0.06
+      memory: 200Mi
+
+jobservice:
+  resources:
+    requests:
+      cpu: 0.02
+      memory: 30Mi
+    limits:
+      cpu: 0.04
+      memory: 60Mi
+
+registry:
+  registry:
+    resources:
+      requests:
+        cpu: 0.01
+        memory: 8196Mi
+      limits:
+        cpu: 0.02
+        memory: 10808Mi
+ 
+chartmuseum:
+  resources:
+    requests:
+      cpu: 0.025
+      memory: 50Mi
+    limits:
+      cpu: 0.05
+      memory: 100Mi
+
+trivy:
+  resources:
+    requests:
+      cpu: 200
+      memory: 512Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+
+notary:
+  server:
+    requests:
+      cpu: 0.01
+      memory: 20Mi
+    limits:
+      cpu: 0.02
+      memory: 40Mi
+  signer:
+    requests:
+      cpu: 0.01
+      memory: 20Mi
+    limits:
+      cpu: 0.02
+      memory: 40Mi
+
+database:
+  requests:
+      cpu: 0.02
+      memory: 400Mi
+    limits:
+      cpu: 0.04
+      memory: 800Mi
+
+redis:
+  requests:
+      cpu: 0.01
+      memory: 15Mi
+    limits:
+      cpu: 0.02
+      memory: 30Mi
