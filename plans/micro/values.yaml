@@ -43,14 +43,20 @@ jobservice:
 registry:
   registry:
     resources:
-      image:
-        requests:
-          cpu: 0.05
-          memory: 8196Mi
-      controller:
-        limits:
-          cpu: 0.1
-          memory: 10808Mi
+      requests:
+        cpu: 0.05
+        memory: 2702Mi
+      limits:
+        cpu: 0.1
+        memory: 5404Mi
+  controller:
+    resources:
+      requets:
+        cpu: 0.05
+        memory: 2702Mi
+      limits:
+        cpu: 0.1
+        memory: 5404Mi
  
 chartmuseum:
   resources:
@@ -91,19 +97,37 @@ notary:
 
 database:
   internal:
-    resources:
-      requests:
-        cpu: 0.02
-        memory: 400Mi
-      limits:
-        cpu: 0.04
-        memory: 800Mi
+    initContainer:
+      migrator:
+        resources:
+          requests:
+            cpu: 0.005
+            memory: 50Mi
+          limits:
+            cpu: 0.01
+            memory: 100Mi
+      permissions:
+        resources:
+          requests:
+            cpu: 0.005
+            memory: 50Mi
+          limits:
+            cpu: 0.01
+            memory: 100Mi
+      resources:
+        requests:
+          cpu: 0.1
+          memory: 200Mi
+        limits:
+          cpu: 0.2
+          memory: 400Mi
 
 redis:
-  resources:
-    requests:
-      cpu: 0.01
-      memory: 15Mi
-    limits:
-      cpu: 0.02
-      memory: 30Mi
+  internal:
+    resources:
+      requests:
+        cpu: 0.01
+        memory: 15Mi
+      limits:
+        cpu: 0.02
+        memory: 30Mi
