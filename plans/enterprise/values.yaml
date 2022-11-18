@@ -45,10 +45,18 @@ registry:
     resources:
       requests:
         cpu: 0.05
-        memory: 8196Mi
+        memory: 4098Mi
       limits:
         cpu: 0.1
-        memory: 17520Mi
+        memory: 8760Mi
+  controller:
+    resources:
+      requets:
+        cpu: 0.05
+        memory: 4908Mi
+      limits:
+        cpu: 0.1
+        memory: 8760Mi
 
 chartmuseum:
   resources:
@@ -86,16 +94,33 @@ notary:
       limits:
         cpu: 0.04
         memory: 80Mi
-
 database:
-  resources:
-    requests:
-      cpu: 0.02
-      memory: 400Mi
-    limits:
-      cpu: 0.08
-      memory: 1600Mi
-        
+  internal:
+    initContainer:
+      migrator:
+        resources:
+          requests:
+            cpu: 0.005
+            memory: 10Mi
+          limits:
+            cpu: 0.01
+            memory: 200Mi
+      permissions:
+        resources:
+          requests:
+            cpu: 0.005
+            memory: 100Mi
+          limits:
+            cpu: 0.01
+            memory: 200Mi
+      resources:
+        requests:
+          cpu: 0.1
+          memory: 400Mi
+        limits:
+          cpu: 0.2
+          memory: 800Mi
+
 redis:
   resources:
     requests:
