@@ -7,56 +7,58 @@ persistence:
 nginx:
   resources:
     requests:
-      cpu: 0.005
-      memory: 20Mi
+      cpu: 0.05
+      memory: 128Mi
     limits:
-      cpu: 0.01
-      memory: 40Mi
+      cpu: 0.1
+      memory: 256Mi
 
 portal:
   resources:
     requests:
-      cpu: 0.001
-      memory: 35Mi
+      cpu: 0.05
+      memory: 128Mi
     limits:
-      cpu: 0.002
-      memory: 70Mi
+      cpu: 0.1
+      memory: 256Mi
 
 core:
   resources:
     requests:
-      cpu: 0.03
-      memory: 100Mi
+      cpu: 0.05
+      memory: 128Mi
     limits:
-      cpu: 0.06
-      memory: 200Mi
+      cpu: 0.1
+      memory: 256Mi
 
 jobservice:
   resources:
     requests:
-      cpu: 0.02
-      memory: 30Mi
+      cpu: 0.05
+      memory: 128Mi
     limits:
-      cpu: 0.04
-      memory: 60Mi
+      cpu: 0.1
+      memory: 256Mi
 
 registry:
   registry:
     resources:
-      requests:
-        cpu: 0.01
-        memory: 8196Mi
-      limits:
-        cpu: 0.02
-        memory: 10808Mi
+      image:
+        requests:
+          cpu: 0.05
+          memory: 8196Mi
+      controller:
+        limits:
+          cpu: 0.1
+          memory: 10808Mi
  
 chartmuseum:
   resources:
     requests:
-      cpu: 0.025
+      cpu: 0.05
       memory: 50Mi
     limits:
-      cpu: 0.05
+      cpu: 0.1
       memory: 100Mi
 
 trivy:
@@ -87,14 +89,15 @@ notary:
         cpu: 0.02
         memory: 40Mi
 
-        #database:
-        #  resources:
-        #    requests:
-        #      cpu: 0.02
-        #      memory: 400Mi
-        #    limits:
-        #      cpu: 0.04
-        #      memory: 800Mi
+database:
+  internal:
+    resources:
+      requests:
+        cpu: 0.02
+        memory: 400Mi
+      limits:
+        cpu: 0.04
+        memory: 800Mi
 
 redis:
   resources:
