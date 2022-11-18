@@ -51,7 +51,7 @@ registry:
         memory: 5404Mi
   controller:
     resources:
-      requets:
+      requests:
         cpu: 0.05
         memory: 2702Mi
       limits:
